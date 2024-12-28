@@ -38,6 +38,11 @@ public class TaskDataAccessObject {
 
     public String deleteTask(int id){
         template.opsForHash().delete(HASH_KEY,id);
-        return "task removed !!";
+        return "task removed!!";
+    }
+
+    public String deleteAllTasks(){
+        template.delete(HASH_KEY);
+        return "all tasks removed!!";
     }
 }

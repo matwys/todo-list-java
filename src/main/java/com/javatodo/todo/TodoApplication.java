@@ -56,6 +56,10 @@ public class TodoApplication {
         return dao.deleteTask(id);
     }
 
+    @DeleteMapping("/action")
+    public String removeAll()   {
+        return dao.deleteAllTasks();
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(TodoApplication.class, args);
